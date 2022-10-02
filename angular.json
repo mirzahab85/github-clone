@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "github-clone"
+  "defaultProject": "github-clone",
+  "cli": {
+    "analytics": false
+  }
 }
