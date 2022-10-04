@@ -1,0 +1,27 @@
+.angular-logo {
+  margin: 0 22px 3px 0;
+  height: 35px;
+  vertical-align: middle;
+}
+.fill-remaining-space {
+flex: 1 1 auto;
+margin: 0 22px 3px 0;
+}
+.search {
+  padding: 40px;
+}
+.button {
+  padding: 20px;
+}
+mat-toolbar > div > form > input[type=text] {
+  height: 30px;
+  width: 120%;
+}
+mat-toolbar {
+  background-color: black;
+  color: white;
+  font-size: 17px;
+  font-weight: 100;
+}
+
+

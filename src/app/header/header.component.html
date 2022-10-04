@@ -1,28 +1,24 @@
-<div class="container">
-  <div class="flex-container" fxLayout="row">
-<mat-toolbar color="primary" class="logo" fxLayoutGap="10px">
-
-  <img src="assets/github_logo.png" />
-
-  <span class="fill-remaining-space" fxLayoutGap="30px">
-  <a mat-button>Product</a>
-  <a mat-button>Solutions</a>
-  <a mat-button>Open Source</a>
-  <a mat-button>Pricing</a>
-  <a mat-button>Sign in</a>
-  <a mat-button>Sign up</a></span>
+<mat-toolbar>
+  <span fxLayoutGap="20px">
+    <img src="assets/github_logo.png" class="angular-logo" >
+    <a button mat-button>Product</a>
+    <a button mat-button>Solutions</a>
+    <a button mat-button>Open Source</a>
+    <a button mat-button>Pricing</a>
+  </span>
+  <span class="fill-remaining-space">
+  </span>
 
 
-  <div class="search">
-
+  <div class="search" >
     <form action="#">
         <input type="text"
             placeholder=" Search "
             name="search">
-
     </form>
 </div>
-
+  <a button mat-button class="button">Sign in</a>
+  <a button mat-button>Sign up</a>
 </mat-toolbar>
-</div>
-</div>
+
+
