@@ -1,0 +1,12 @@
+div > div > span {
+    padding-top: 12px;
+}
+div > div > span.public {
+  margin:11px;
+  padding: 1px 7px 0 7px;
+  border: 1px solid gray;
+  border-radius: 0.7em;
+}
+svg {
+  width: 200px;
+}
