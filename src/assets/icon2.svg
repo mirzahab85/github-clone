@@ -1,0 +1,16 @@
+<svg width="280px" height="16.8" xmlns="http://www.w3.org/2000/svg"
+viewBox="8 2 10 14">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <g>
+   <g>
+    <title>Layer 1</title>
+        <text id="svg_1"  y="14" x="17" style="font-size:14px; font-weight:500; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji;">Star</text>
+    <path fill="none"/>
+    <path fill="none"/>
+    <path d="m7.75758,0.87907a0.75,0.75 0 0 1 0.673,0.418l1.882,3.815l4.21,0.612a0.75,0.75 0 0 1 0.416,1.279l-3.046,2.97l0.719,4.192a0.75,0.75 0 0 1 -1.088,0.791l-3.766,-1.98l-3.766,1.98a0.75,0.75 0 0 1 -1.088,-0.79l0.72,-4.194l-3.048,-2.969a0.75,0.75 0 0 1 0.416,-1.28l4.21,-0.611l1.883,-3.815a0.75,0.75 0 0 1 0.673,-0.418zm0,2.445l-1.385,2.805a0.75,0.75 0 0 1 -0.564,0.41l-3.097,0.45l2.24,2.184a0.75,0.75 0 0 1 0.216,0.664l-0.528,3.084l2.769,-1.456a0.75,0.75 0 0 1 0.698,0l2.77,1.456l-0.53,-3.084a0.75,0.75 0 0 1 0.216,-0.664l2.24,-2.183l-3.096,-0.45a0.75,0.75 0 0 1 -0.564,-0.41l-1.385,-2.807l0,0.001z" fill="black"/>
+   </g>
+  </g>
+ </g>
+
+</svg>
