@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class IconServices {
     constructor(private _iconReg : MatIconRegistry, private _domSanitizer : DomSanitizer) {
       Icondata.forEach(e=>{
-        this._iconReg.addSvgIconLiteral(e.name, this._domSanitizer.bypassSecurityTrustHtml(e.data))
+        this._iconReg.addSvgIcon(e.name, this._domSanitizer.bypassSecurityTrustResourceUrl(e.url));
       })
     }
 }

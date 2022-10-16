@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderModule } from './header/header.module';
 import { angularaMaterials } from './custom-svg/angular-materials';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { angularaMaterials } from './custom-svg/angular-materials';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    HttpClientModule,
     NoopAnimationsModule,
     MatInputModule,
     MatToolbarModule,
