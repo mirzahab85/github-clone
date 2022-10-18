@@ -8,10 +8,24 @@ div > div > span.public {
   border-radius: 0.7em;
 }
 .container-svg {
-  padding: 9px 164px 19px 242px;
-  width:60%;
+  padding: 9px 11px 6px 393px;
+  width:29%;
   display: flex;
 }
+
+div.container-svg > div {
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 5px 25px 0 5px;
+  margin: 1px 11px;
+  gap: 20px;
+  height: 32px;
+}
+
 svg {
   border: 1px solid black;
 }
+
+
+
+
