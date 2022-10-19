@@ -1,13 +1,19 @@
-
 <mat-toolbar color="pink">
 
-
   <!-- <mat-icon svgIcon="battery-100"></mat-icon> -->
-  <span fxLayoutGap="20px" >
+  <span fxLayoutGap="20px">
     <img src="assets/images/github_logo.png" class="angular-logo" >
     <a button mat-button>
-      Product
-    <mat-icon>expand_more</mat-icon>
+      <!-- Product -->
+      <mat-select>
+        <!-- Problem with dropdown list-->
+      <mat-option *ngFor="let dog of dogs"></mat-option>
+
+    <mat-icon>
+      expand_more
+    </mat-icon>
+  </mat-select>
+
     </a>
     <a button mat-button>
       Solutions
@@ -24,7 +30,6 @@
   </span>
   <span class="fill-remaining-space">
   </span>
-
 
   <div class="search" >
     <form action="#">

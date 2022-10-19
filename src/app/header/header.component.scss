@@ -1,6 +1,10 @@
 div > div > span {
     padding-top: 12px;
 }
+div > div > img{
+  padding: 15px;
+}
+
 div > div > span.public {
   margin:11px;
   padding: 1px 7px 0 7px;
@@ -20,6 +24,16 @@ div.container-svg > div {
   margin: 1px 11px;
   gap: 20px;
   height: 32px;
+}
+
+.container-icon > .column > .row
+{
+  padding: 20px;
+}
+.container-icon > .column > .row > p {
+  margin: 0px 30px 0px;
+  font-size: 20px;
+  list-style: underline;
 }
 
 svg {

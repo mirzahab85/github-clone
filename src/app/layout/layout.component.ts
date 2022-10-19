@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+    dogs = ['Beagle', 'Black Lab', 'English Buldog', 'Poodle']
+
   constructor() { }
 
   ngOnInit(): void {
