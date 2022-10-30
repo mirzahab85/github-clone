@@ -8,8 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
@@ -21,6 +22,7 @@ import { angularaMaterials } from './custom-svg/angular-materials';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,20 +31,21 @@ import { HttpClientModule } from '@angular/common/http';
 
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     NoopAnimationsModule,
     MatInputModule,
-    MatSelectModule,
+    MatMenuModule,
     MatToolbarModule,
     MatCardModule,
     MatListModule,
     MatIconModule,
     FlexLayoutModule,
+    MatButtonModule,
     FormsModule,
     HeaderModule,
-    angularaMaterials
+    angularaMaterials,
+    AppRoutingModule,
 
 
   ],

@@ -35,5 +35,14 @@ border: 1px solid white;
     padding: 5px 10px 4px 11px;
 }
 
+.btn-icon {
+  &:hover {
+    path {
+      fill: rgba(#00ffff, 1);
+    }
+  }
+}
+
+
 
 
