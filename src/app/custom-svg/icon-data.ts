@@ -40,6 +40,17 @@ export const Icondata = [
     name: 'insights',
     url: `/assets/icons/insights.svg`,
   },
-
+  {
+    name: 'tags',
+    url: `/assets/icons/tags.svg`,
+  },
+  {
+    name: 'master',
+    url: `/assets/icons/master.svg`,
+  },
+  {
+    name: 'branch',
+    url: `/assets/icons/branch.svg`,
+  },
 
 ]

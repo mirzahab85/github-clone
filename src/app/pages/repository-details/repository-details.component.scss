@@ -1,0 +1,20 @@
+div.container {
+  display: flex;
+  padding: 20px;
+  max-width: 100%;
+}
+.container>.row {
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 9px 22px 5px 16px;
+}
+div.row>span.branch {
+  align-items: center;
+  padding: 10px;
+}
+div.row>span.tags {
+  align-items: center;
+}
+span {
+  padding-left: 10px;
+}
