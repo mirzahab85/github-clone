@@ -18,3 +18,21 @@ div.row>span.tags {
 span {
   padding-left: 10px;
 }
+
+.btn a {
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 6px 22px 5px 16px;
+
+}
+
+div > div.btn > div {
+  padding-left: 260px;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+//* Table */
+table {
+  width: 100%;
+}

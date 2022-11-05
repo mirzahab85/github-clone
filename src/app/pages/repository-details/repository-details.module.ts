@@ -6,19 +6,22 @@ import { CommonModule } from '@angular/common';
 import { RepositoryDetailsRoutingModule } from './repository-details-routing.module';
 import { RepositoryDetailsComponent } from './repository-details.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
     RepositoryDetailsComponent,
-
   ],
-  imports: [
+
+    imports: [
     CommonModule,
     RepositoryDetailsRoutingModule,
     MatIconModule,
-    FlexLayoutModule
-
-
+    FlexLayoutModule,
+    MatTableModule
   ]
 })
-export class RepositoryDetailsModule { }
+export class RepositoryDetailsModule {
+
+}
