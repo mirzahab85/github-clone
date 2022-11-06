@@ -15,24 +15,60 @@ div.row>span.branch {
 div.row>span.tags {
   align-items: center;
 }
+
 span {
   padding-left: 10px;
+
 }
 
 .btn a {
+  background-color: #f6f8fa;
   border: 1px solid gray;
   border-radius: 6px;
-  padding: 6px 22px 5px 16px;
+  padding: 11px 22px 5px 16px;
 
 }
 
 div > div.btn > div {
-  padding-left: 260px;
+  padding-left: 380px;
   font-weight: 400;
   font-size: 17px;
 }
 
+div > div.btn > div > span.code {
+    background-color: green;
+    color: white;
+    padding: 10px 10px 10px 16px;
+    border-radius: 6px;
+}
+
+/* Border */
+div.border > div {
+  margin-top: -900px;
+  gap: 20px;
+}
+p.github {
+  font-size: 20px;
+}
+
+p.readme {
+  padding-left: 10px;
+  font-size: 16px !important;
+}
+p.stars {
+  padding-left: 11px;
+  font-size: 16px !important;
+}
+
+p.watching {
+  padding-left: 11px;
+  font-size: 16px !important;
+}
+
 //* Table */
 table {
-  width: 100%;
+  width: 70%;
+  margin-left: 21px;
+  border-radius: 6px;
 }
+

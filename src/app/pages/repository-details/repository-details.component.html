@@ -1,10 +1,8 @@
 <div class="container" >
-  <div class="row" fxLayout="row" fxLayoutAlign="center" fxFlex="8%">
+  <div class="row" fxLayout="row" fxLayoutAlign="center" fxFlex="8%" >
     <mat-icon svgIcon="master"></mat-icon>
     <span class="master">master</span>
-      <mat-icon>
-        expand_more
-      </mat-icon>
+    <mat-icon>arrow_drop_down</mat-icon>
 
   </div>
 
@@ -18,19 +16,24 @@
     <span class="tags">tags</span>
   </div>
 
-  <div class="btn" fxLayoutAlign="end center" >
+  <div fxLayout="row" class="btn" fxLayoutAlign="end center" >
     <div fxLayout="row" fxLayoutGap="35px">
     <a hreg="#">Go to File</a>
-    <span class="code" fxLayoutAlign="start center">Code</span>
+    <span class="code" fxLayoutAlign="start center">Code
+      <mat-icon>arrow_drop_down</mat-icon>
+    </span>
+
   </div>
 </div>
+
 </div>
 
-<!-- Tables -->
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+
+
+<!-- Table -->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!-- Position Column -->
   <ng-container matColumnDef="position">
@@ -56,6 +59,43 @@
     <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <ng-container matColumnDef="routerLink">
+    <th mat-header-cell *matHeaderCellDef> routerLink </th>
+    <td mat-cell *matCellDef="let element"> ToDo</td>
+  </ng-container>
+
+  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<div class="border" fxLayoutAlign="end center">
+<div class="row" fxLayout="column" fxFlex="27%">
+  <h2 class="about">About</h2>
+  <p class="github">GitHub Pages</p>
+
+  <div class="readme">
+    <span class="material-symbols-outlined" fxGap="22px">
+      import_contacts
+      </span>
+      <p class="readme" fxFlex="27%">ReadMe</p>
+  </div>
+  <div class="star">
+    <span class="material-symbols-outlined">
+      star
+      </span>
+      <p class="stars" fxFlex="27%">stars</p>
+  </div>
+  <div class="visit">
+    <span class="material-symbols-outlined">
+      visibility
+      </span>
+      <p class="watching" fxFlex="27%">watching</p>
+  </div>
+</div>
+  </div>
+
+
+
+
+
+
