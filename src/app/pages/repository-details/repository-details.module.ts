@@ -7,7 +7,7 @@ import { RepositoryDetailsRoutingModule } from './repository-details-routing.mod
 import { RepositoryDetailsComponent } from './repository-details.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { MatTableModule } from '@angular/material/table';
     RepositoryDetailsRoutingModule,
     MatIconModule,
     FlexLayoutModule,
-    MatTableModule
+    MatTableModule,
+    MatDividerModule,
   ]
 })
 export class RepositoryDetailsModule {

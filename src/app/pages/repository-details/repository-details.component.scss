@@ -44,8 +44,8 @@ div > div.btn > div > span.code {
 
 /* Border */
 div.border > div {
-  margin-top: -900px;
-  gap: 20px;
+  margin-top: -553px;
+  gap: 10px;
 }
 p.github {
   font-size: 20px;
@@ -63,6 +63,60 @@ p.stars {
 p.watching {
   padding-left: 11px;
   font-size: 16px !important;
+}
+
+/* Divider */
+.mat-divider {
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+/* Progess Bar */
+
+.progress {
+  display: flex;
+  height: 11px;
+  overflow: hidden;
+  width: 80%;
+  border-radius: 6px;
+  outline: 1px solid transparent;
+}
+.color-blue {
+  background-color: #3178c6;
+  width: 56.9%;
+}
+.color-red {
+  background-color: #e34c26;
+  width: 22.0%;
+}
+.color-pink {
+  background-color: #c6538c;
+  width: 15.6%;
+}
+.color-yellow {
+  background-color: #f1e05a;
+  width: 5.5%;
+}
+
+.programin-lang {
+  columns: 2;
+}
+li::marker  {
+
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+li.TypeScript::marker {
+  color:#3178c6;
+}
+li.HTML::marker {
+  color:#e34c26;
+}
+li.SCSS::marker {
+  color:#c6538c;
+}
+li.JavaScript::marker {
+  color:#f1e05a;
 }
 
 //* Table */
