@@ -30,100 +30,61 @@
 
 
 <!-- Table -->
+<div>
+  <span fxFlex="75%">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="icon">
+        <th mat-header-cell *matHeaderCellDef style="width: 48px;"> No. </th>
+        <td mat-cell *matCellDef="let element" class="status" style="width: 48px;">
+          <mat-icon>{{element.icon}}</mat-icon>
+        </td>
+      </ng-container>
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef> Weight </th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-  </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-  </ng-container>
+       <!-- Icon Column -->
+       <ng-container matColumnDef="deleteEmployee">
+        <th mat-header-cell *matHeaderCellDef> deleteEmployee </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home">{{element.icon}}</mat-icon> </td>
+      </ng-container>
 
-  <ng-container matColumnDef="routerLink">
-    <th mat-header-cell *matHeaderCellDef> routerLink </th>
-    <td mat-cell *matCellDef="let element"> ToDo</td>
-  </ng-container>
+      <ng-container matColumnDef="routerLink">
+        <th mat-header-cell *matHeaderCellDef> routerLink </th>
+        <td mat-cell *matCellDef="let element"> ToDo</td>
+      </ng-container>
 
-  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+      <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
-<div class="border" fxLayoutAlign="end center">
-<div class="row" fxLayout="column" fxFlex="27%">
-  <h2 class="about">About</h2>
-  <p class="github">GitHub Pages</p>
+  </span>
+  <span fxFlex="25%">
+    <app-about></app-about>
+  </span>
 
-  <div class="readme">
-    <span class="material-symbols-outlined" fxGap="22px">
-      import_contacts
-      </span>
-      <p class="readme" fxFlex="27%">ReadMe</p>
-  </div>
-  <div class="star">
-    <span class="material-symbols-outlined">
-      star
-      </span>
-      <p class="stars" fxFlex="27%">stars</p>
-  </div>
-  <div class="visit">
-    <span class="material-symbols-outlined">
-      visibility
-      </span>
-      <p class="watching" fxFlex="27%">watching</p>
-  </div>
-  <mat-divider></mat-divider>
-  <div class="releases">
-    <h2><a>Relases</a></h2>
-    <div class="text">No releases published</div>
-  </div>
-  <mat-divider></mat-divider>
-  <div class="languages">
-    <h2><a>Languages</a></h2>
-    <span class="progress">
-      <span class="color-blue"></span>
-      <span class="color-red"></span>
-      <span class="color-pink"></span>
-      <span class="color-yellow"></span>
-    </span>
-  </div>
-  <ul class="programin-lang">
-    <li class="TypeScript">
-      <span>TypeScript</span>
-      <span>56.9%</span>
-    </li>
-    <li class="HTML">
-      <span>HTML</span>
-      <span>22.0%</span>
-    </li>
-    <li class="SCSS">
-      <span>SCSS</span>
-      <span>15.6%</span>
-    </li>
-    <li class="JavaScript">
-      <span>JavaScript</span>
-      <span>5.5%</span>
-    </li>
-  </ul>
-  </div>
 </div>
+
+
+
 
 
 
