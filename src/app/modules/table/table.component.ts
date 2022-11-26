@@ -27,6 +27,7 @@ export class TableComponent implements OnInit {
   displayedColumns: string[] = ['icon',  'name', 'weight', 'symbol', ];
   dataSource = ELEMENT_DATA;
   numbers: number[];
+
   constructor() {
     this.numbers = Array(5).fill(0).map((x,i)=>i);
   }
