@@ -21,14 +21,11 @@ import { HeaderModule } from './header/header.module';
 import { angularaMaterials } from './custom-svg/angular-materials';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LayoutComponent,
-
   ],
   imports: [
     BrowserModule,
