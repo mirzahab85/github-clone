@@ -1,6 +1,7 @@
 import { IconServices } from './custom-svg/icon.service';
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,4 +10,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'github-clone';
   constructor(private _iconService: IconServices) { }
+
 }

@@ -20,6 +20,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { HeaderModule } from './header/header.module';
 import { angularaMaterials } from './custom-svg/angular-materials';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome'
+
 
 @NgModule({
   declarations: [
@@ -43,10 +45,12 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderModule,
     angularaMaterials,
     AppRoutingModule,
+    FontAwesomeModule,
 
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }

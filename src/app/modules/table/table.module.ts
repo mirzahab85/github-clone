@@ -1,3 +1,4 @@
+import { MatIconRegistry } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,6 +7,7 @@ import { TableComponent } from './table.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { AboutModule } from "../about/about.module";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 
 @NgModule({
@@ -20,7 +22,12 @@ import { AboutModule } from "../about/about.module";
         TableRoutingModule,
         MatIconModule,
         MatTableModule,
-        AboutModule
+        AboutModule,
+        FontAwesomeModule,
+
     ]
 })
-export class TableModule { }
+export class TableModule {
+  constructor(matIconRegistry: MatIconRegistry)
+  {matIconRegistry.registerFontClassAlias('fontawesome', 'fa');}
+}
