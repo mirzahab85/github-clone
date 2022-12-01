@@ -1,7 +1,6 @@
 import { IconServices } from './custom-svg/icon.service';
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

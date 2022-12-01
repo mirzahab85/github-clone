@@ -29,5 +29,5 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 })
 export class TableModule {
   constructor(matIconRegistry: MatIconRegistry)
-  {matIconRegistry.registerFontClassAlias('fontawesome', 'fa');}
+  {matIconRegistry.registerFontClassAlias('fontawesome', 'fas');}
 }

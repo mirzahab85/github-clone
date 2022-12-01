@@ -53,4 +53,5 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
  }
