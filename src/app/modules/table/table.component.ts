@@ -1,25 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-
-
+import { FaConfig } from '@fortawesome/angular-fontawesome';
 
 interface PeriodicElement {
 
   icon: string;
   name: string;
-  weight: number;
-  symbol: string;
+  commits: string;
+  update: string;
   initIcon?: Function;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { icon: "folder", name: '.vscode', weight: 1.0079, symbol: 'H',  },
-  { icon: "folder",  name: 'src', weight: 4.0026, symbol: 'He' },
-  { icon: "folder ", name: 'Hydrogen', weight: 1.0079, symbol: 'H',  },
-  { icon: "",  name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { icon: "home", name: 'Hydrogen', weight: 1.0079, symbol: 'H',  },
-  { icon: "home",  name: 'Helium', weight: 4.0026, symbol: 'He' },
+  { icon: "fa-folder", name: '.vscode', commits: 'initial commit', update: '2 mouths ago',  },
+  { icon: "fa-folder",  name: 'src', commits: 'Error with duplicate font awesome icon in table', update: '2 days ago' },
+  { icon: "fa-file", name: '.browserslistrc', commits: 'initial commit', update: '2 months ago',  },
+  { icon: "fa-file",  name: '.editorconfig', commits: 'initial commit', update: '2 months ago' },
+  { icon: "fa-file",  name: '.gitignore', commits: 'initial commit', update: '2 months ago' },
+  { icon: "fa-file", name: 'README.md', commits: 'initial commit', update: '2 months ago',  },
+  { icon: "fa-file",  name: 'angular.json', commits: 'Creating font awesome', update: '4 days ago' },
+  { icon: "fa-file",  name: 'karma.conf.js', commits: 'initial commit', update: '2 months ago' },
+  { icon: "fa-file",  name: 'package-lock.json', commits: 'Creating font awesome', update: '4 days ago' },
+  { icon: "fa-file",  name: 'package.json', commits: 'Creating font awesome', update: '4 days ago' },
+  { icon: "fa-file",  name: 'tsconfig.app.json', commits: 'initial commit', update: '2 months ago' },
+  { icon: "fa-file",  name: 'tsconfig.json', commits: 'initial commit', update: '2 months ago' },
+  { icon: "fa-file",  name: 'tsconfig.spec.json', commits: 'initial commit', update: '2 months ago' },
 ]
 
 @Component({
@@ -28,15 +32,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  displayedColumns: string[] = ['icon',  'name', 'weight', 'symbol', ];
+  displayedColumns: string[] = ['icon',  'name', 'commits', 'update', ];
   dataSource = ELEMENT_DATA;
   numbers: number[];
-  faCoffee = faCoffee
 
-
-
-  constructor(library: FaIconLibrary){
-    library.addIcons(faCoffee);
+  constructor(faConfig: FaConfig){
+    faConfig.defaultPrefix = 'far';
+    faConfig.fixedWidth = true;
     this.numbers = Array(5).fill(0).map((x,i)=>i);
   }
 
