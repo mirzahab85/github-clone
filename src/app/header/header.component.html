@@ -31,23 +31,22 @@
   <div fxLayout="column" class="column" >
     <div fxLayout="row" class="row">
       <mat-icon svgIcon="code" class="code">
-      </mat-icon><p>Code</p>
-
+      </mat-icon><p [routerLink]="['/', 'code']" routerLinkActive="active">Code</p>
 
       <mat-icon svgIcon="adjust">
-      </mat-icon><p>Adjust</p>
+      </mat-icon><p [routerLink]="['/', 'adjust']" routerLinkActive="active">Adjust</p>
 
       <mat-icon svgIcon="pull_request">
-      </mat-icon><p>Pull requests</p>
+      </mat-icon><p [routerLink]="['/', 'pull_request']" routerLinkActive="active">Pull requests</p>
 
       <mat-icon svgIcon="actions">
-      </mat-icon><p>Actions</p>
+      </mat-icon><p [routerLink]="['/', 'actions']" routerLinkActive="active">Actions</p>
 
       <mat-icon svgIcon="security">
-      </mat-icon><p>Security</p>
+      </mat-icon><p [routerLink]="['/', 'security']" routerLinkActive="active">Security</p>
 
       <mat-icon svgIcon="insights">
-      </mat-icon><p>Insights</p>
+      </mat-icon><p [routerLink]="['/', 'insights']" routerLinkActive="active">Insights</p>
 
   </div>
 
