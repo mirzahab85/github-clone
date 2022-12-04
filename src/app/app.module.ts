@@ -1,5 +1,5 @@
 
-import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,6 +27,7 @@ import { PullRequestsComponent } from './pages/pull-requests/pull-requests.compo
 import { ActionsComponent } from './pages/actions/actions.component';
 import { SecurityComponent } from './pages/security/security.component';
 import { InsightsComponent } from './pages/insights/insights.component';
+import { GitApiService } from './services/git-api.service';
 
 
 
@@ -42,12 +43,14 @@ import { InsightsComponent } from './pages/insights/insights.component';
     SecurityComponent,
     InsightsComponent,
   ],
-  providers: [],
+  providers: [
+    GitApiService
+  ],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     MatInputModule,
     MatMenuModule,
     MatToolbarModule,

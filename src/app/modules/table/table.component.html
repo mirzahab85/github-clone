@@ -7,8 +7,11 @@
       <ng-container matColumnDef="icon" >
         <th mat-header-cell *matHeaderCellDef style="width: 48px;"> No. </th>
         <td mat-cell *matCellDef="let element" class="status" style="width: 48px;">
-          <i class="fa-solid fa-folder fa-2xl" primaryColor="red" *ngIf="element.icon==='fa-folder'"></i>
-          <i class="fa-regular fa-file fa-2xl" *ngIf="element.icon==='fa-file'"></i>
+          <i class="fa-2xl"
+          [ngClass]="[
+            element.cls,
+            element.icon,
+             ]" primaryColor="red"></i>
         </td>
       </ng-container>
 
