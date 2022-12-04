@@ -10,7 +10,6 @@ import { MatTableModule } from '@angular/material/table';
 import { AboutModule } from 'src/app/modules/about/about.module';
 import { TableModule } from "../../modules/table/table.module";
 
-
 @NgModule({
     declarations: [
         RepositoryDetailsComponent,

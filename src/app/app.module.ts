@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,7 +20,14 @@ import { LayoutComponent } from './layout/layout.component';
 import { HeaderModule } from './header/header.module';
 import { angularaMaterials } from './custom-svg/angular-materials';
 import { HttpClientModule } from '@angular/common/http';
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CodeComponent } from './pages/code/code.component';
+import { AdjustComponent } from './pages/adjust/adjust.component';
+import { PullRequestsComponent } from './pages/pull-requests/pull-requests.component';
+import { ActionsComponent } from './pages/actions/actions.component';
+import { SecurityComponent } from './pages/security/security.component';
+import { InsightsComponent } from './pages/insights/insights.component';
+
 
 
 @NgModule({
@@ -28,7 +35,15 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
     AppComponent,
     HeaderComponent,
     LayoutComponent,
+    CodeComponent,
+    AdjustComponent,
+    PullRequestsComponent,
+    ActionsComponent,
+    SecurityComponent,
+    InsightsComponent,
   ],
+  providers: [],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -46,12 +61,8 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
     angularaMaterials,
     AppRoutingModule,
     FontAwesomeModule,
-
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule {
 
- }
+}
