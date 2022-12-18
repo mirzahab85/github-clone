@@ -2,10 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const apiGitHubUrl: string = 'https://api.github.com/octocat';
+const apiGitHubUrl: string = 'https://api.github.com/';
+
 
 export enum apiENUM {
-
+  users = 'users',
 }
 
 export const environment = {

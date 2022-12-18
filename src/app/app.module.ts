@@ -28,43 +28,43 @@ import { ActionsComponent } from './pages/actions/actions.component';
 import { SecurityComponent } from './pages/security/security.component';
 import { InsightsComponent } from './pages/insights/insights.component';
 import { GitApiService } from './services/git-api.service';
-
-
+import { LoginModule } from "./login/login.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    LayoutComponent,
-    CodeComponent,
-    AdjustComponent,
-    PullRequestsComponent,
-    ActionsComponent,
-    SecurityComponent,
-    InsightsComponent,
-  ],
-  providers: [
-    GitApiService
-  ],
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatListModule,
-    MatIconModule,
-    FlexLayoutModule,
-    MatButtonModule,
-    FormsModule,
-    HeaderModule,
-    angularaMaterials,
-    AppRoutingModule,
-    FontAwesomeModule,
-  ]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        LayoutComponent,
+        CodeComponent,
+        AdjustComponent,
+        PullRequestsComponent,
+        ActionsComponent,
+        SecurityComponent,
+        InsightsComponent,
+    ],
+    providers: [
+        GitApiService
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatListModule,
+        MatIconModule,
+        FlexLayoutModule,
+        MatButtonModule,
+        FormsModule,
+        HeaderModule,
+        angularaMaterials,
+        AppRoutingModule,
+        FontAwesomeModule,
+        LoginModule,
+    ]
 })
 export class AppModule {
 

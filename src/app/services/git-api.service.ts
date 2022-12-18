@@ -1,4 +1,3 @@
-import { GitApiService } from './git-api.service';
 import { environment } from './../../environments/environment';
 import { apiENUM } from './../../environments/environment';
 import { Injectable } from '@angular/core';
@@ -13,6 +12,6 @@ export class GitApiService {
   ) { }
 
   public gitHub(): Observable<any[]>{
-    return this.httpClient.get<any[]>(environment.apiGitHubUrl + apiENUM.GitApiService)
+    return this.httpClient.get<any[]>(environment.apiGitHubUrl + apiENUM.users)
   }
 }
