@@ -1,4 +1,5 @@
-
+import { AuthGuard } from './shared/auth.guard';
+import { AuthService } from './shared/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 
@@ -28,7 +29,7 @@ import { ActionsComponent } from './pages/actions/actions.component';
 import { SecurityComponent } from './pages/security/security.component';
 import { InsightsComponent } from './pages/insights/insights.component';
 import { GitApiService } from './services/git-api.service';
-import { LoginModule } from "./login/login.module";
+
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import { LoginModule } from "./login/login.module";
         InsightsComponent,
     ],
     providers: [
-        GitApiService
+        GitApiService,
+        AuthGuard
     ],
     bootstrap: [AppComponent],
     imports: [
@@ -63,7 +65,6 @@ import { LoginModule } from "./login/login.module";
         angularaMaterials,
         AppRoutingModule,
         FontAwesomeModule,
-        LoginModule,
     ]
 })
 export class AppModule {

@@ -1,0 +1,41 @@
+mat-card {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10em auto;
+  max-height: 600px;
+  max-width: 600px;
+}
+
+mat-card > div > h4 {
+  color: #2196F3;
+}
+
+.mat-form-field-appearance-legacy .mat-hint {
+  font-size: 14px;
+  color: red;
+}
+
+.login-form{
+  padding-top: 22px;
+  font-size: 20px;
+}
+
+.form{
+    text-align: center;
+}
+
+.full-width {
+  padding: 20px;
+  width: 50%;
+}
+
+form > div.botton > button {
+  width: 50%;
+  margin: 10px;
+  padding: 10px 18px;
+  background-color: #2196F3;
+  color: white;
+  font-size: 18px;
+}
