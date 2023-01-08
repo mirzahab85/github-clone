@@ -21,10 +21,19 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private AuthService: AuthService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
   }
 
+  public submit(): void {
+    if (this.loginFormGroup.invalid) {
+      return;
+    }
+    const credetials: { password: string; username: string } = this.loginFormGroup.value;
+    console.log(credetials);
+    this.authService.isLogedIn = true;
+    this.router.navigate(['/']);
+  }
 }

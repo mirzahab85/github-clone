@@ -9,7 +9,4 @@ export class AuthService {
   }
   isLogedIn = false;
   constructor() { }
-  isLoggedin(){
-    return !!localStorage.getItem('token');
-  }
 }
