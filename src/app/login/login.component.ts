@@ -27,6 +27,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onLoginSubmit() {
+    const user = {
+      username: String,
+      password: String
+    }
+  }
+
   public submit(): void {
     if (this.loginFormGroup.invalid) {
       return;

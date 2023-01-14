@@ -10,7 +10,7 @@ interface NavItem {
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-
+  loginStatus: any;
 
   navItems:NavItem[] = [{
     name: 'Product',
@@ -34,6 +34,14 @@ export class LayoutComponent implements OnInit {
 
   OnClick() {
     console.log('OnClick')
+  }
+
+  login() {
+
+  }
+
+  logout() {
+
   }
 
 
