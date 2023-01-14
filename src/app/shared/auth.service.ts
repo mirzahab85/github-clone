@@ -9,4 +9,6 @@ export class AuthService {
   }
   isLogedIn = false;
   constructor() { }
+
+  isLogout = true;
 }
