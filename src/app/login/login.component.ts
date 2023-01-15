@@ -1,3 +1,4 @@
+import { UserService } from './../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../shared/auth.service';
@@ -18,20 +19,19 @@ export class LoginComponent implements OnInit {
     password: [null, [Validators.required]],
   })
 
+  users:any[] = [];
 
   constructor(
     private router: Router,
     private authService: AuthService,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
-  }
-
-  onLoginSubmit() {
-    const user = {
-      username: String,
-      password: String
-    }
+    this.userService.getUsers().subscribe((users:any[])=>{
+      console.log(users);
+      this.users = users;
+    })
   }
 
   public submit(): void {
@@ -40,7 +40,12 @@ export class LoginComponent implements OnInit {
     }
     const credetials: { password: string; username: string } = this.loginFormGroup.value;
     console.log(credetials);
-    this.authService.isLogedIn = true;
-    this.router.navigate(['/']);
+    const loggedUser = this.users.find((user:any) => {
+      return credetials.username === user.username;
+    })
+    if (!!loggedUser ) {
+      this.authService.isLogedIn = true;
+      this.router.navigate(['/']);
+    }
   }
 }

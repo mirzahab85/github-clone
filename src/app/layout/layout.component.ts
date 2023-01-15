@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../shared/auth.service';
 import { Component, OnInit } from '@angular/core';
 interface NavItem {
   name: string,
@@ -10,7 +12,7 @@ interface NavItem {
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  loginStatus: any;
+  loginStatus: boolean = false;
 
   navItems:NavItem[] = [{
     name: 'Product',
@@ -29,19 +31,17 @@ export class LayoutComponent implements OnInit {
   },
   ];
 
-  constructor() {
+  constructor(private authService: AuthService, private router: Router) {
+    this.loginStatus = this.authService.isLogedIn
   }
 
   OnClick() {
     console.log('OnClick')
   }
 
-  login() {
-
-  }
-
   logout() {
-
+      this.authService.isLogedIn = false;
+      this.router.navigate(['/login']);
   }
 
 

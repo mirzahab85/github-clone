@@ -4,6 +4,7 @@
 
 const apiGitHubUrl: string = 'https://api.github.com/';
 
+const apiServer: string = 'http://localhost:3000/';
 
 export enum apiENUM {
   users = 'users',
@@ -12,6 +13,7 @@ export enum apiENUM {
 export const environment = {
   production: false,
   apiGitHubUrl,
+  apiServer
 };
 
 /*
