@@ -22,15 +22,16 @@ export class LoginComponent implements OnInit {
   users:any[] = [];
 
   constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private authService: AuthService,
     private userService: UserService
   ) { }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((users:any[])=>{
-      console.log(users);
-      this.users = users;
+    this.loginFormGroup = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
     })
   }
 
@@ -41,11 +42,13 @@ export class LoginComponent implements OnInit {
     const credetials: { password: string; username: string } = this.loginFormGroup.value;
     console.log(credetials);
     const loggedUser = this.users.find((user:any) => {
-      return credetials.username === user.username;
+      return credetials.username === user.username && credetials.password === user.password;
     })
     if (!!loggedUser ) {
-      this.authService.isLogedIn = true;
+      this.authService.isLogedIn = false;
       this.router.navigate(['/']);
+    } else {
+      alert('Invalid username or password');
     }
   }
 }

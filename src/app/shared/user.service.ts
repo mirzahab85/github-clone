@@ -1,3 +1,4 @@
+import { apiENUM } from './../../environments/environment';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -13,7 +14,7 @@ export class UserService {
   }
 
   getUsers():Observable<any> {
-    return this.httpClient.get(environment.apiServer + 'users')
+    return this.httpClient.get(environment.apiServer + 'user')
   }
 }
 

@@ -4,17 +4,20 @@
     {
       "id": 1,
       "username": "miki",
-      "email": "mirza.habul1985@gmail.com"
+      "email": "mirza.habul1985@gmail.com",
+      "password": "admin"
     },
     {
       "id": 2,
       "username": "mhabul",
-      "email": "mirza.habul@telemach.ba"
+      "email": "mirza.habul@telemach.ba",
+      "password": "admin"
     },
     {
       "id": 3,
       "username": "miki1",
-      "email": "miki1@test.com"
+      "email": "miki1@test.com",
+      "password": "admin"
     }
 
   ]
