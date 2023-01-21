@@ -14,7 +14,7 @@ export class UserService {
   }
 
   getUsers():Observable<any> {
-    return this.httpClient.get(environment.apiServer + 'user')
+    return this.httpClient.get(environment.apiServer + 'users')
   }
 }
 
