@@ -25,13 +25,12 @@
             name="search">
           </form>
         </div>
-        <a button mat-button class="button" *ngIf="loginStatus">Sign in</a>
+        <a button mat-button class="button" *ngIf="loginStatus" (click)="signIn()">Sign in</a>
         <a button mat-button class="signin" *ngIf="loginStatus">Sign up</a>
-        <li class="nav-item">
+          <button type="button" mat-button class="button" *ngIf="logout" (click)="logout()">
+            Logout
+          </button>
         </mat-toolbar>
-        <button type="button" class="btn btn-danger" *ngIf="logout" (click)="logout()">
-          Logout
-        </button>
 
 <app-header></app-header>
 <router-outlet></router-outlet>

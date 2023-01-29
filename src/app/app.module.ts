@@ -29,7 +29,7 @@ import { ActionsComponent } from './pages/actions/actions.component';
 import { SecurityComponent } from './pages/security/security.component';
 import { InsightsComponent } from './pages/insights/insights.component';
 import { GitApiService } from './services/git-api.service';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
     declarations: [
@@ -42,10 +42,11 @@ import { GitApiService } from './services/git-api.service';
         ActionsComponent,
         SecurityComponent,
         InsightsComponent,
+
     ],
     providers: [
         GitApiService,
-        AuthGuard
+        AuthGuard,
     ],
     bootstrap: [AppComponent],
     imports: [
@@ -65,6 +66,7 @@ import { GitApiService } from './services/git-api.service';
         angularaMaterials,
         AppRoutingModule,
         FontAwesomeModule,
+        MatDialogModule
     ]
 })
 export class AppModule {

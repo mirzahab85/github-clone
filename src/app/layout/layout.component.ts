@@ -1,6 +1,10 @@
+import { LoginComponent } from './../login/login.component';
 import { Router } from '@angular/router';
 import { AuthService } from './../shared/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
+
 interface NavItem {
   name: string,
   route?: string,
@@ -14,7 +18,7 @@ interface NavItem {
 export class LayoutComponent implements OnInit {
   loginStatus: boolean = false;
 
-  navItems:NavItem[] = [{
+  navItems: NavItem[] = [{
     name: 'Product',
     children: [{ name: 'Item 1', route: '/' }, { name: 'Item 2', route: '/test' },]
   },
@@ -31,8 +35,9 @@ export class LayoutComponent implements OnInit {
   },
   ];
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private matdialog: MatDialog) {
     this.loginStatus = this.authService.isLogedIn
+
   }
 
   OnClick() {
@@ -40,8 +45,16 @@ export class LayoutComponent implements OnInit {
   }
 
   logout() {
-      this.authService.isLogedIn = false;
-      this.router.navigate(['/login']);
+    this.authService.isLogedIn = false;
+    this.router.navigate(['/login']);
+  }
+
+  signIn() {
+    this.matdialog.open(LoginComponent, {
+
+      
+    }
+    )
   }
 
 
