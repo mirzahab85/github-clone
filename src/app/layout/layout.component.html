@@ -25,7 +25,7 @@
             name="search">
           </form>
         </div>
-        <a button mat-button class="button" *ngIf="loginStatus" (click)="signIn()">Sign in</a>
+        <a button mat-button class="button" *ngIf="loginStatus" (click)="signIn()" mat-dialog-close>Sign in</a>
         <a button mat-button class="signin" *ngIf="loginStatus">Sign up</a>
           <button type="button" mat-button class="button" *ngIf="logout" (click)="logout()">
             Logout

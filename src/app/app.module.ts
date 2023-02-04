@@ -29,7 +29,7 @@ import { ActionsComponent } from './pages/actions/actions.component';
 import { SecurityComponent } from './pages/security/security.component';
 import { InsightsComponent } from './pages/insights/insights.component';
 import { GitApiService } from './services/git-api.service';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     declarations: [

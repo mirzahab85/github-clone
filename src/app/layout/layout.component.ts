@@ -1,8 +1,9 @@
+import { DialogBodyComponent } from './../dialog-body/dialog-body.component';
 import { LoginComponent } from './../login/login.component';
 import { Router } from '@angular/router';
 import { AuthService } from './../shared/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 interface NavItem {
@@ -34,8 +35,10 @@ export class LayoutComponent implements OnInit {
     name: 'Pricing',
   },
   ];
+  name: any;
+  animal: any;
 
-  constructor(private authService: AuthService, private router: Router, private matdialog: MatDialog) {
+  constructor(private authService: AuthService, private router: Router, public matdialog: MatDialog) {
     this.loginStatus = this.authService.isLogedIn
 
   }
@@ -50,11 +53,17 @@ export class LayoutComponent implements OnInit {
   }
 
   signIn() {
-    this.matdialog.open(LoginComponent, {
-
-      
+    let dialogRef = this.matdialog.open(LoginComponent, {
+    width: '700px',
     }
     )
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Username:', result.username);
+        console.log('Password:', result.password);
+      }
+    })
   }
 
 
