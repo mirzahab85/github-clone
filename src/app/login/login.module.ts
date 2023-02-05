@@ -15,6 +15,9 @@ import { MatIconModule } from '@angular/material/icon';
     declarations: [
         LoginComponent,
     ],
+    exports: [
+      LoginComponent
+    ],
     imports: [
         CommonModule,
         ReactiveFormsModule,
@@ -23,7 +26,6 @@ import { MatIconModule } from '@angular/material/icon';
         MatFormFieldModule,
         MatInputModule,
         LoginRoutingModule,
-
     ]
 })
 export class LoginModule { }

@@ -53,8 +53,9 @@ export class LayoutComponent implements OnInit {
   }
 
   signIn() {
-    let dialogRef = this.matdialog.open(LoginComponent, {
+    let dialogRef = this.matdialog.open(DialogBodyComponent, {
     width: '700px',
+    disableClose: false,
     }
     )
 

@@ -30,44 +30,48 @@ import { SecurityComponent } from './pages/security/security.component';
 import { InsightsComponent } from './pages/insights/insights.component';
 import { GitApiService } from './services/git-api.service';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DialogBodyComponent } from './dialog-body/dialog-body.component';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        LayoutComponent,
-        CodeComponent,
-        AdjustComponent,
-        PullRequestsComponent,
-        ActionsComponent,
-        SecurityComponent,
-        InsightsComponent,
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    LayoutComponent,
+    CodeComponent,
+    AdjustComponent,
+    PullRequestsComponent,
+    ActionsComponent,
+    SecurityComponent,
+    InsightsComponent,
+    DialogBodyComponent
 
-    ],
-    providers: [
-        GitApiService,
-        AuthGuard,
-    ],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatInputModule,
-        MatMenuModule,
-        MatToolbarModule,
-        MatCardModule,
-        MatListModule,
-        MatIconModule,
-        FlexLayoutModule,
-        MatButtonModule,
-        FormsModule,
-        HeaderModule,
-        angularaMaterials,
-        AppRoutingModule,
-        FontAwesomeModule,
-        MatDialogModule
-    ]
+  ],
+  providers: [
+    GitApiService,
+    AuthGuard,
+  ],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
+    FlexLayoutModule,
+    MatButtonModule,
+    FormsModule,
+    HeaderModule,
+    angularaMaterials,
+    AppRoutingModule,
+    FontAwesomeModule,
+    MatDialogModule,
+    LoginModule
+  ]
 })
 export class AppModule {
 
