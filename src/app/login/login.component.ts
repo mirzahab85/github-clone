@@ -46,5 +46,6 @@ export class LoginComponent implements OnInit {
     } else {
       alert('Invalid username or password');
     }
+    
   }
 }
