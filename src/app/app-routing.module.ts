@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    canActivate:[AuthGuard],
+    // canActivate:[AuthGuard],
     children: [
       { path: '', loadChildren: () => import('./pages/repository-details/repository-details.module').then((m) => { return m.RepositoryDetailsModule }) },
       { path: 'test', loadChildren: () => import('./pages/repository-details/repository-details.module').then((m) => { return m.RepositoryDetailsModule }) },

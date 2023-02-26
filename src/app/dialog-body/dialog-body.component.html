@@ -1,7 +1,7 @@
-<h2 mat-dialog-title>
-  <button mat-icon-button color="accent" [mat-dialog-close]="true">
+<h2>
+  <button mat-icon-button color="accent">
     <mat-icon>close</mat-icon>
   </button>
 </h2>
-<app-login></app-login>
+<app-login [login]="currentLogin" (newLoginEvent)="onClose($event)"></app-login>
 

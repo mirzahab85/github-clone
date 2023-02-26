@@ -1,8 +1,9 @@
 import { UserService } from './../shared/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../shared/auth.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+@Input() login = 'loginPage';
+@Output() newLoginEvent = new EventEmitter<boolean>();
+
 
   public loginFormGroup: FormGroup = new FormBuilder().group({
     username: [null, [Validators.required]],
@@ -42,10 +47,15 @@ export class LoginComponent implements OnInit {
     })
     if (!!loggedUser ) {
       this.authService.isLogedIn = true;
-      this.router.navigate(['/']);
+      if (this.login === 'dialogPage') {
+        this.newLoginEvent.emit(true)
+      }
+      else {
+        this.router.navigate(['/']);
+      }
     } else {
       alert('Invalid username or password');
     }
-    
+
   }
 }

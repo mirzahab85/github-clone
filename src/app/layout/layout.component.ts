@@ -17,7 +17,10 @@ interface NavItem {
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  loginStatus: boolean = false;
+
+  public get loginStatus() {
+    return this.authService.isLogedIn;
+  }
 
   navItems: NavItem[] = [{
     name: 'Product',
@@ -39,8 +42,7 @@ export class LayoutComponent implements OnInit {
   animal: any;
 
   constructor(private authService: AuthService, private router: Router, public matdialog: MatDialog) {
-    this.loginStatus = this.authService.isLogedIn
-
+    
   }
 
   OnClick() {
@@ -59,7 +61,9 @@ export class LayoutComponent implements OnInit {
     }
     )
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().toPromise().then
+
+    (result => {
       if (result) {
         console.log('Username:', result.username);
         console.log('Password:', result.password);

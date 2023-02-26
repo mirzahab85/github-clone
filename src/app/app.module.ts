@@ -47,6 +47,7 @@ import { LoginModule } from './login/login.module';
     DialogBodyComponent
 
   ],
+  entryComponents: [DialogBodyComponent],
   providers: [
     GitApiService,
     AuthGuard,

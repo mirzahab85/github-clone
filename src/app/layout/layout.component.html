@@ -4,13 +4,14 @@
   <span fxLayoutGap="20px">
     <img src="assets/images/github_logo.png" class="angular-logo">
     <span *ngFor="let navItem of navItems">
-      <mat-button [matMenuTriggerFor]="menu" >{{navItem.name}}
-      <mat-icon *ngIf="!!navItem.children">
-        expand_more
-      </mat-icon>
+      <mat-button [matMenuTriggerFor]="menu">{{navItem.name}}
+        <mat-icon *ngIf="!!navItem.children">
+          expand_more
+        </mat-icon>
       </mat-button>
-      <mat-menu #menu="matMenu" >
-        <button [routerLink]="childItem?.route" *ngFor="let childItem of navItem.children" mat-menu-item>{{childItem.name}}</button>
+      <mat-menu #menu="matMenu">
+        <button [routerLink]="childItem?.route" *ngFor="let childItem of navItem.children"
+          mat-menu-item>{{childItem.name}}</button>
       </mat-menu>
     </span>
 
@@ -20,17 +21,15 @@
 
   <div class="search">
     <form action="#">
-        <input type="text"
-            placeholder=" Search "
-            name="search">
-          </form>
-        </div>
-        <a button mat-button class="button" *ngIf="loginStatus" (click)="signIn()" mat-dialog-close>Sign in</a>
-        <a button mat-button class="signin" *ngIf="loginStatus">Sign up</a>
-          <button type="button" mat-button class="button" *ngIf="logout" (click)="logout()">
-            Logout
-          </button>
-        </mat-toolbar>
+      <input type="text" placeholder=" Search " name="search">
+    </form>
+  </div>
+  <a button mat-button class="button" *ngIf="!loginStatus" (click)="signIn()" mat-dialog-close>Sign in</a>
+  <a button mat-button class="signin" *ngIf="!loginStatus">Sign up</a>
+  <button type="button" mat-button class="button" *ngIf="loginStatus" (click)="logout()">
+    Logout
+  </button>
+</mat-toolbar>
 
 <app-header></app-header>
 <router-outlet></router-outlet>
