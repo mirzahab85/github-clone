@@ -57,5 +57,13 @@ export class LoginComponent implements OnInit {
       alert('Invalid username or password');
     }
 
+
   }
+  onKeyPress(event: KeyboardEvent) {
+    if(event.key === "Enter") {
+      this.submit();
+    }
+
+  }
+
 }
