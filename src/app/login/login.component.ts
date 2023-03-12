@@ -1,8 +1,9 @@
 import { UserService } from './../shared/user.service';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../shared/auth.service';
 import { Router } from '@angular/router';
+import { map, Subscription } from 'rxjs';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
 @Input() login = 'loginPage';
 @Output() newLoginEvent = new EventEmitter<boolean>();
@@ -22,17 +23,26 @@ export class LoginComponent implements OnInit {
   })
 
   users:any[] = [];
+  private subscription : Subscription = new Subscription();
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private userService: UserService
   ) { }
+  ngOnDestroy(): void {
+    console.log('OnDestroy');
+    this.subscription.unsubscribe()
+  }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((users:any[])=>{
-    this.users=users;
-    });
+    this.subscription.add(this.userService.getUsers().pipe(
+      map((users:any[])=>{
+
+      })
+     ).subscribe(()=>{
+    // this.users=users;
+    }));
   }
 
   public submit(): void {

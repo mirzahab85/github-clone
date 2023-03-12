@@ -42,7 +42,7 @@ export class LayoutComponent implements OnInit {
   animal: any;
 
   constructor(private authService: AuthService, private router: Router, public matdialog: MatDialog) {
-    
+
   }
 
   OnClick() {
@@ -71,7 +71,7 @@ export class LayoutComponent implements OnInit {
     })
   }
 
-
   ngOnInit(): void {
+    this.authService.isLoggedIn.subscribe((isLoggedIn)=>{});
   }
 }

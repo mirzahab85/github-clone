@@ -8,11 +8,16 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   private _isLoggedIn = false;
-
+  public isLoggedIn : BehaviorSubject < boolean >= new BehaviorSubject(false);
+  
   getAuthStatus() {
     throw new Error('Method not implemented.');
   }
   isLogedIn = false;
   constructor(private http: HttpClient) { }
+
+  login() {
+
+  }
 
 }
