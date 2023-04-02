@@ -22,8 +22,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     password: [null, [Validators.required]],
   })
 
-  users:any[] = [];
   private subscription : Subscription = new Subscription();
+  public get users(){
+    return this.userService.users$.value;
+  }
+
 
   constructor(
     private router: Router,
@@ -38,10 +41,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription.add(this.userService.getUsers().pipe(
       map((users:any[])=>{
-
+        this.userService.users$.next(users)
       })
      ).subscribe(()=>{
-    // this.users=users;
     }));
   }
 
@@ -56,7 +58,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       return credetials.username === user.username || credetials.password === user.password;
     })
     if (!!loggedUser ) {
-      this.authService.isLogedIn = true;
+      this.authService.isLoggedIn.next(true);
       if (this.login === 'dialogPage') {
         this.newLoginEvent.emit(true)
       }

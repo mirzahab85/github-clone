@@ -19,7 +19,7 @@ interface NavItem {
 export class LayoutComponent implements OnInit {
 
   public get loginStatus() {
-    return this.authService.isLogedIn;
+    return this.authService.isLoggedIn.value;
   }
 
   navItems: NavItem[] = [{
@@ -50,7 +50,7 @@ export class LayoutComponent implements OnInit {
   }
 
   logout() {
-    this.authService.isLogedIn = false;
+    this.authService.isLoggedIn.next(false);
     this.router.navigate(['/login']);
   }
 
