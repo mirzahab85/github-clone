@@ -14,8 +14,12 @@ const HEROES = [
 export class ListComponent implements OnInit {
   items: string[] = ['Apple', 'Banana', 'Orange'];
 
-  addItem() {
-    this.items.push('Ananas');
+   addItem() {
+    this.items.push('Avokado');
+  }
+
+  removeItem() {
+    this.items.pop();
   }
 
   constructor() { }
