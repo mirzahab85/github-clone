@@ -32,6 +32,7 @@ import { GitApiService } from './services/git-api.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogBodyComponent } from './dialog-body/dialog-body.component';
 import { LoginModule } from './login/login.module';
+import { ListComponent } from './pages/list/list.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import { LoginModule } from './login/login.module';
     ActionsComponent,
     SecurityComponent,
     InsightsComponent,
-    DialogBodyComponent
+    DialogBodyComponent,
+    ListComponent,
+
 
   ],
   entryComponents: [DialogBodyComponent],

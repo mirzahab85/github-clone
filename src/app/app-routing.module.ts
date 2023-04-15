@@ -18,6 +18,7 @@ const routes: Routes = [
       { path: 'actions', loadChildren: () => import('./pages/actions/actions.module').then((m) => { return m.ActionsModule }) },
       { path: 'security', loadChildren: () => import('./pages/security/security.module').then((m) => { return m.SecurityModule }) },
       { path: 'insights', loadChildren: () => import('./pages/insights/insights.module').then((m) => { return m.InsightsModule }), },
+      { path: 'list', loadChildren: () => import('./pages/list/list.module').then((m) => { return m.ListModule }), },
     ]
   },
   { path: 'login', loadChildren: () => import('./login/login.module').then((m) => { return m.LoginModule }) },
