@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.list {
+  border: RGBA(46, 49, 49, .7) solid 1px;
+  border-radius: 2px;
+}
+
+.list-container {
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2em;
+
+}
+
+.column-container {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+  background-color: RGBA(255, 255, 255, 0.05);
+}
+mat-card {
+  margin: 1em;
+  cursor: pointer;
+}
+
+
+
+

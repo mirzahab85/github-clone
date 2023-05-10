@@ -1,6 +1,6 @@
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ListRoutingModule } from './list-routing.module';
 
 
@@ -8,7 +8,8 @@ import { ListRoutingModule } from './list-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    ListRoutingModule
+    ListRoutingModule,
+    DragDropModule
   ]
 })
 export class ListModule { }

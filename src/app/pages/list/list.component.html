@@ -1,6 +1,50 @@
 <ul>
   <li *ngFor="let item of items">{{ item }}</li>
 </ul>
-<button (click)="addItem()">addItem</button>
 
-<button (click)="removeItem()">addItem</button>
+<button (click)="addItem()">Add Item</button>
+
+<button (click)="removeItem()">Remove Item</button>
+
+<button (click)="removefirstItem()">Remove First Item</button>
+
+<div class="container">
+  <div class="list-container">
+    <div class="dragdrop column-container">
+      <div cdkDropList (cdkDropListDropped)="onDrop($event)"
+      class="list-item" *ngFor="let item of items" cdkDrag>{{ item }}>
+        <h2>Tech to learn</h2>
+        <mat-card cdkDrag  *ngFor="let drag of drags">
+          <mat-card-header>
+            <mat-card-title>{{ drag.name }}</mat-card-title>
+            <mat-card-subtitle>{{ drag.category }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="drop-container column-container">
+      <div class="list">
+        <h2>Tech learned</h2>
+        <mat-card *ngFor="let drop of drops">
+          <mat-card-header>
+            <mat-card-title>{{ drop.name }}</mat-card-title>
+            <mat-card-subtitle>{{ drop.category }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="drop-container column-container">
+    <div class="list">
+      <h2>Tech learned</h2>
+      <mat-card *ngFor="let drop of drops">
+        <mat-card-header>
+          <mat-card-title>{{ drop.name }}</mat-card-title>
+          <mat-card-subtitle>{{ drop.category }}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+</div>
