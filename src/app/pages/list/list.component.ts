@@ -1,5 +1,7 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder,Validators } from '@angular/forms';
+import { ITask } from 'src/app/models/task';
 
 
 // const HEROES = [
@@ -14,6 +16,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+
+  todForm !: FormGroup
+  task : ITask [] = [];
+  inprogress : ITask [] = [];
+  done : ITask [] = [];
+
   items: string[] = ['Apple', 'Banana', 'Orange'];
 
    addItem() {
@@ -28,51 +36,33 @@ export class ListComponent implements OnInit {
     this.items.shift();
   }
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.todForm = this.fb.group({
+      item : ['', Validators.required]
+    })
   }
 
-  drags = [
-    {
-      name: 'Angular',
-      category: 'Web development'
-    },
-    {
-      name: 'Flexbox',
-      category: 'Web development'
-    },
-    {
-      name: 'IOS',
-      category: 'App development'
-    },
-    {
-      name: 'Java',
-      category: 'Software development'
-    }
-  ];
 
-  drops = [
-    {
-      name: 'Android',
-      category: 'Mobile Development'
-    },
-    {
-      name: 'Mongo',
-      category: 'Database'
-    },
-    {
-      name: 'ARkit',
-      category: 'Augmented Reality'
-    },
-    {
-      name: 'React',
-      category: 'Web Development'
-    }
-  ];
+  addTask(){
+    this.task.push({
+      description: this.todForm.value.item,
+      done:false
+    })
+  }
 
-  onDrop(dropEvent: CdkDragDrop<string[]>) {
-    moveItemInArray(this.items, dropEvent.previousIndex, dropEvent.currentIndex);
+  drop(event: CdkDragDrop<ITask[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
   }
 }
 

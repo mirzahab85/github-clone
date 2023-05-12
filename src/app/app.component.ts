@@ -12,6 +12,3 @@ export class AppComponent {
   teams$ = this.http.get('http://localhost:3000/api/teams');
   constructor(private _iconService: IconServices, private http: HttpClient) { }
 }
-
-
-

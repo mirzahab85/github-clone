@@ -2,6 +2,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListRoutingModule } from './list-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import { ListRoutingModule } from './list-routing.module';
   imports: [
     CommonModule,
     ListRoutingModule,
-    DragDropModule
+    DragDropModule,
+    ReactiveFormsModule
   ]
 })
 export class ListModule { }

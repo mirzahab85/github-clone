@@ -2,7 +2,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { AuthService } from './shared/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HeaderComponent } from './header/header.component';
 
@@ -33,6 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogBodyComponent } from './dialog-body/dialog-body.component';
 import { LoginModule } from './login/login.module';
 import { ListComponent } from './pages/list/list.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,9 @@ import { ListComponent } from './pages/list/list.component';
     AppRoutingModule,
     FontAwesomeModule,
     MatDialogModule,
-    LoginModule
+    LoginModule,
+    ReactiveFormsModule,
+    DragDropModule
   ]
 })
 export class AppModule {
