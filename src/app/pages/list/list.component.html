@@ -37,7 +37,11 @@
               [cdkDropListData]="task"
               class="example-list"
               (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of task" cdkDrag>{{ item.description }}</div>
+              <div class="example-box" *ngFor="let item of task; let i = index" cdkDrag>{{ item.description }}</div>
+              <div class="box">
+                <button mat-icon-button color="warn" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
+                <button mat-icon-button color="primary" (click)="onEdit(item, i)"><mat-icon>edit</mat-icon></button>
+              </div>
             </div>
           </div>
           <div class="example-container cdk-drag-preview">

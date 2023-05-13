@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 import { ITask } from 'src/app/models/task';
 
 
+
 // const HEROES = [
 //   {id: 1, name: "Superman"},
 //   {id: 2, name: "Batman"},
@@ -21,6 +22,12 @@ export class ListComponent implements OnInit {
   task : ITask [] = [];
   inprogress : ITask [] = [];
   done : ITask [] = [];
+  i: number = 0;
+  // item: ITask = { description: '', done: false };
+  updateId!:any;
+  isEditEnabled: boolean = true;
+
+
 
   items: string[] = ['Apple', 'Banana', 'Orange'];
 
@@ -50,6 +57,17 @@ export class ListComponent implements OnInit {
       description: this.todForm.value.item,
       done:false
     })
+  }
+
+  onEdit(item:ITask, i : number){
+    this.todForm.controls['item'].setValue(item.description);
+    this.updateId = i;
+    this.isEditEnabled = true;
+
+  }
+
+  deleteTask(i: number){
+    this.task.splice(i, 1)
   }
 
   drop(event: CdkDragDrop<ITask[]>) {
