@@ -21,8 +21,8 @@
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
               <mat-hint>Add task</mat-hint>
             </mat-form-field>
-            <button (click)="addTask()" mat-raised-button [disabled]="todForm.invalid" color="primary">Add</button>
           </form>
+          <button (click)="addTask()" mat-raised-button [disabled]="todForm.invalid" color="primary">Add</button>
         </mat-card>
       </div>
     </div>
@@ -32,15 +32,19 @@
       <div class="row">
         <div>
           <div class="example-container">
-            <h2>To do</h2>
-            <div cdkDropList
+            <h2 class="head-title">TO DO <span *ngIf="task.length > 0"> - {{task.length}}</span></h2>
+
+            <div
+              cdkDropList
               [cdkDropListData]="task"
               class="example-list"
               (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of task; let i = index" cdkDrag>{{ item.description }}</div>
-              <div class="box">
-                <button mat-icon-button color="warn" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
-                <button mat-icon-button color="primary" (click)="onEdit(item, i)"><mat-icon>edit</mat-icon></button>
+              <div class="example-box" *ngFor="let item of task; let i = index" cdkDrag>{{item.description}}
+                  <div class="box">
+                      <button mat-icon-button color="warn" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
+                      <button mat-icon-button color="primary" (click)="onEdit(item,i)"><mat-icon>edit</mat-icon></button>
+
+                  </div>
               </div>
             </div>
           </div>

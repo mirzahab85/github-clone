@@ -23,7 +23,7 @@ export class ListComponent implements OnInit {
   inprogress : ITask [] = [];
   done : ITask [] = [];
   i: number = 0;
-  // item: ITask = { description: '', done: false };
+  item: ITask = { description: '', done: false };
   updateId!:any;
   isEditEnabled: boolean = true;
 
@@ -60,10 +60,10 @@ export class ListComponent implements OnInit {
   }
 
   onEdit(item:ITask, i : number){
-    this.todForm.controls['item'].setValue(item.description);
-    this.updateId = i;
-    this.isEditEnabled = true;
-
+    this.todForm.patchValue({ item: item.description });
+  this.updateId = i;
+  this.isEditEnabled = true;
+  console.log(item);
   }
 
   deleteTask(i: number){
