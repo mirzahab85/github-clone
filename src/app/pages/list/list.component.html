@@ -23,6 +23,7 @@
             </mat-form-field>
           </form>
           <button (click)="addTask()" mat-raised-button [disabled]="todForm.invalid" color="primary">Add</button>
+          <button *ngIf="isEditEnabled" (click)="onUpdateTask()" mat-raised-button [disabled]="todForm.invalid" color="primary">Update</button>
         </mat-card>
       </div>
     </div>
