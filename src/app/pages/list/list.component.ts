@@ -26,6 +26,7 @@ export class ListComponent implements OnInit {
   //item: ITask = { description: '', done: false }; -
   updateId!:any;
   isEditEnabled: boolean = false;
+  isNormalPointer: boolean = false;
 
 
 
@@ -78,6 +79,12 @@ export class ListComponent implements OnInit {
     this.task.splice(i, 1)
   }
 
+  deleteAll() {
+    this.task = [];
+    this.inprogress = [];
+    this.done = [];
+  }
+
   drop(event: CdkDragDrop<ITask[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -89,6 +96,10 @@ export class ListComponent implements OnInit {
         event.currentIndex,
       );
     }
+  }
+
+  toggleNormalPointer() {
+    this.isNormalPointer = !this.isNormalPointer;
   }
 }
 
