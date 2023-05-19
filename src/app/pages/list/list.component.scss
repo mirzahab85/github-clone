@@ -64,3 +64,12 @@
   grid-auto-flow: column;
   grid-column-gap: 10px;
 }
+
+.normal-pointer {
+  cursor: default;
+}
+
+
+.cursor-pointer {
+  cursor: pointer;
+}
