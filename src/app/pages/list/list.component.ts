@@ -85,6 +85,10 @@ export class ListComponent implements OnInit {
     this.done = [];
   }
 
+  sortTask() {
+    this.task.sort((a,b) => a.description.localeCompare(b.description));
+  }
+
   drop(event: CdkDragDrop<ITask[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
