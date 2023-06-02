@@ -6,13 +6,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     ListRoutingModule,
     DragDropModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ]
 })
 export class ListModule { }
