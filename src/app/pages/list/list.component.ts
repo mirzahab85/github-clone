@@ -1,12 +1,22 @@
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl,
+  FormArray,
+} from '@angular/forms';
 import { ITask } from 'src/app/models/task';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
   todForm!: FormGroup; // FormGroup for adding new tasks
@@ -17,27 +27,60 @@ export class ListComponent implements OnInit {
   isEditEnabled = false; // Flag indicating whether task editing is enabled
   isNormalPointer = false; // Flag indicating the type of cursor during dragging (not implemented)
   items: string[] = ['Apple', 'Banana', 'Orange']; // Array with static values
+  checklistFormGroup!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.todForm = this.fb.group({
-      item: ['', Validators.required] // Initialize FormGroup for task input
+      item: [''], // Initialize FormGroup for task input
     });
+
+    this.checklistFormGroup = this.fb.group({
+      title: [null, [Validators.required]],
+      description: [null, []],
+      sections: this.fb.array([]),
+    });
+    const sectionFormGroup = this.fb.group({
+      title: [null, [Validators.required]],
+      description: [null, []],
+      checks: this.fb.array([]),
+    });
+    const checkFormGroup = this.fb.group({
+      title: [null, [Validators.required]],
+      description: [null, []],
+      mandatory: [false, []],
+    });
+    (sectionFormGroup.controls['checks'] as FormArray).setControl(0, checkFormGroup);
+    (this.checklistFormGroup.controls['sections'] as FormArray).setControl(0, sectionFormGroup);
+  }
+
+  public get sectionsFormArray(): FormArray {
+    return (this.checklistFormGroup.controls['sections'] as FormArray) as FormArray
+  }
+
+  public get itemValue() {
+    return this.itemFormControl.value;
+  }
+  public get itemFormControl() {
+    return this.todForm.controls['item'] as FormControl;
+  }
+
+  resetItemValue() {
+    return this.itemFormControl.reset();
   }
 
   // Adds a new task to the "To Do" card
   addTask(): void {
     this.task.push({
-      
       description: this.todForm.value.item,
-      done: false
+      done: false,
     });
   }
 
   // Enables editing of a task
   onEdit(item: ITask, i: number): void {
-    this.todForm.patchValue({ item: item.description });
+    this.todForm.controls['item'].patchValue(item.description);
     this.updateId = i;
     this.isEditEnabled = true;
     console.log(item);
@@ -129,7 +172,7 @@ export class ListComponent implements OnInit {
   addItem(): void {
     this.task.push({
       description: 'New Item',
-      done: false
+      done: false,
     });
   }
 
